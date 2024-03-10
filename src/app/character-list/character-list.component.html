@@ -1,0 +1,17 @@
+<div
+  style="display: flex; gap: 4px; flex-wrap: wrap"
+  *ngIf="characters$ | async as characters"
+>
+  <card
+    (onCharacterSelected)="onCharacterSelected($event)"
+    *ngFor="let character of characters.results"
+    [character]="character"
+  ></card>
+</div>
+
+<modal
+  (onClose)="selectedCharacter = undefined"
+  [modalVisible]="!!selectedCharacter"
+>
+  <card *ngIf="selectedCharacter" [character]="selectedCharacter"></card>
+</modal>

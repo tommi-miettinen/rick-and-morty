@@ -1,0 +1,11 @@
+<p-dialog
+  maskStyle="background-color: rgba(0, 0, 0, 0.5);"
+  (onHide)="hideModal()"
+  [modal]="true"
+  [dismissableMask]="true"
+  [(visible)]="modalVisible"
+>
+  <ng-template pTemplate="headless">
+    <ng-content />
+  </ng-template>
+</p-dialog>
